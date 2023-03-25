@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import * as React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
 
 export default function App() {
   return (
@@ -19,7 +19,9 @@ export default function App() {
             parent route paths, and nested route elements render inside
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
-        <Route path="/" element={<Layout />}>
+        {/* redireict to /abrar-portfolio if / is visited */}
+        <Route path="/" element={<Navigate replace to="/abrar-portfolio" />} />
+        <Route path="/abrar-portfolio/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
@@ -45,13 +47,17 @@ function Layout() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <Link to="about" >
+              About
+            </Link>
           </li>
           <li>
-            <Link to="/dashboard">Dashboard</Link>
+            <Link to="dashboard">
+              Dashboard
+            </Link>
           </li>
           <li>
-            <Link to="/nothing-here">Nothing Here</Link>
+            <Link to="nothing-here">Nothing Here</Link>
           </li>
         </ul>
       </nav>
