@@ -1,11 +1,10 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import * as React from "react";
 import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
 
 export default function App() {
   return (
     <div>
-      <h1>Basic Example</h1>
+      <h1>Basic Example {import.meta.env.VITE_SOME_KEY}</h1>
 
       <p>
         This example demonstrates some of the core features of React Router
@@ -20,8 +19,8 @@ export default function App() {
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
         {/* redireict to /abrar-portfolio if / is visited */}
-        <Route path="/" element={<Navigate replace to="/abrar-portfolio" />} />
-        <Route path="/abrar-portfolio/" element={<Layout />}>
+        <Route path="/" element={<Navigate replace to="/abrar-portfolio/" />} />
+        <Route path="/abrar-portfolio" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
@@ -47,14 +46,10 @@ function Layout() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="about" >
-              About
-            </Link>
+            <Link to="about">About</Link>
           </li>
           <li>
-            <Link to="dashboard">
-              Dashboard
-            </Link>
+            <Link to="dashboard">Dashboard</Link>
           </li>
           <li>
             <Link to="nothing-here">Nothing Here</Link>
