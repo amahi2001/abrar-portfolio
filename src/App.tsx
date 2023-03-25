@@ -4,7 +4,7 @@ import { Routes, Route, Outlet, Link, Navigate } from "react-router-dom";
 export default function App() {
   return (
     <div>
-      <h1>Basic Example {import.meta.env.VITE_SOME_KEY}</h1>
+      <h1>Basic Example {import.meta.env.MODE}</h1>
 
       <p>
         This example demonstrates some of the core features of React Router
