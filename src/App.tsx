@@ -19,8 +19,7 @@ export default function App() {
             parent route elements. See the note about <Outlet> below. */}
       <Routes>
         {/* redireict to /abrar-portfolio if / is visited */}
-        <Route path="/" element={<Navigate replace to="/abrar-portfolio/" />} />
-        <Route path="/abrar-portfolio" element={<Layout />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="dashboard" element={<Dashboard />} />
@@ -46,13 +45,13 @@ function Layout() {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="about">About</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="dashboard">Dashboard</Link>
+            <Link to="/dashboard">Dashboard</Link>
           </li>
           <li>
-            <Link to="nothing-here">Nothing Here</Link>
+            <Link to="/nothing-here">Nothing Here</Link>
           </li>
         </ul>
       </nav>
